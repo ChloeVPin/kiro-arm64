@@ -2,7 +2,7 @@
 # install.sh - TUI installer for Kiro IDE ARM64
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/USER/kiro-arm64/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/ChloeVPin/kiro-arm64/main/install.sh | bash
 #   ./install.sh                    interactive install
 #   ./install.sh --uninstall        remove Kiro
 #   ./install.sh --help             show usage
@@ -12,7 +12,7 @@ set -euo pipefail
 
 # ─── Configuration ────────────────────────────────────────────────────────────
 
-REPO_OWNER="chloevpin"
+REPO_OWNER="ChloeVPin"
 REPO_NAME="kiro-arm64"
 GITHUB_API="https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/releases/latest"
 INSTALL_DIR="/usr/share/kiro"

@@ -24,3 +24,6 @@ Thumbs.db
 
 # Source debs (users provide their own; never commit binaries)
 *.deb
+
+# Session logs (development context, not part of the project)
+SESSION_LOG.md

@@ -49,7 +49,7 @@ After installation, launch from your application menu or run `kiro` in a termina
 Requires: Debian/Ubuntu ARM64, Node.js 20+, build-essential, ~4GB disk space.
 
 ```bash
-git clone https://github.com/chloevpin/kiro-arm64.git
+git clone https://github.com/ChloeVPin/kiro-arm64.git
 cd kiro-arm64
 ```
 
@@ -136,9 +136,9 @@ Additionally, `@lancedb/vectordb-linux-arm64-gnu` is installed from its publishe
 
 ## Tested on
 
-- Ubuntu 24.04 / 26.04 on Raspberry Pi 5
-- Debian 12 on Apple Silicon (Asahi Linux)
-- Ubuntu 24.04 on Ampere Altra (cloud ARM64)
+- Ubuntu 26.04 on Snapdragon X Elite (Dell XPS 13 9345)
+
+Other ARM64 Debian/Ubuntu systems should work. If you test on additional hardware, open an issue or PR to update this list.
 
 ## Disclaimer
 
