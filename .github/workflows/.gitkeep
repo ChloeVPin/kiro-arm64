@@ -1,0 +1,4 @@
+## Future CI workflows go here
+##
+## Example: .github/workflows/build.yml could run scripts/build-all.sh on a
+## self-hosted arm64 runner and upload the .deb as a release asset.
