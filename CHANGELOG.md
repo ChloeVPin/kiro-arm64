@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented here.
 
+## [0.12.224] - 2026-05-22
+
+### Changed
+
+- Bumped target Kiro IDE release to 0.12.224.
+- Confirmed upstream Linux x64 package still uses Electron 39.6.0.
+
 ## [0.12.184] - 2026-05-15
 
 Initial release.

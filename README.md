@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Kiro-0.12.184-9046FF?style=flat-square" alt="Kiro version">
+  <img src="https://img.shields.io/badge/Kiro-0.12.224-9046FF?style=flat-square" alt="Kiro version">
   <img src="https://img.shields.io/badge/Electron-39.6.0-47848F?style=flat-square" alt="Electron version">
   <img src="https://img.shields.io/badge/arch-arm64-blue?style=flat-square" alt="Architecture">
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License">
@@ -33,13 +33,13 @@ No source code from Kiro is modified. The JavaScript, HTML, and extension bundle
 Download the latest `.deb` from [Releases](../../releases), then:
 
 ```bash
-sudo dpkg -i kiro-ide-0.12.184-arm64.deb
+sudo dpkg -i kiro-ide-0.12.224-arm64.deb
 ```
 
 Or use the TUI installer:
 
 ```bash
-bash install.sh --local kiro-ide-0.12.184-arm64.deb
+bash install.sh --local kiro-ide-0.12.224-arm64.deb
 ```
 
 After installation, launch from your application menu or run `kiro` in a terminal.
