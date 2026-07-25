@@ -10,52 +10,51 @@
       <stop offset="0%" stop-color="#151520"/>
       <stop offset="100%" stop-color="#0B0B15"/>
     </linearGradient>
-    <linearGradient id="purple-glow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7138CC" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#7C4AD6" stop-opacity="0"/>
-    </linearGradient>
   </defs>
 
   <!-- Background Canvas -->
   <rect width="1200" height="340" rx="16" fill="url(#hero-bg)"/>
   <rect width="1200" height="340" rx="16" fill="none" stroke="#7C4AD6" stroke-width="1.5" stroke-opacity="0.3"/>
 
-  <!-- Subtle Brand Accent Bar -->
-  <rect x="0" y="0" width="1200" height="4" fill="#7138CC" rx="2"/>
-
-  <!-- Left Column: Branding & Title -->
-  <g transform="translate(60, 48)">
-    <!-- Eyebrow Category -->
-    <g transform="translate(0, 0)">
-      <rect width="210" height="28" rx="14" fill="#7138CC" fill-opacity="0.2" stroke="#7C4AD6" stroke-width="1"/>
-      <text x="14" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#E0E0E0" letter-spacing="1.2">ARM64 LINUX REPACKAGE</text>
-    </g>
-
-    <!-- Main Title -->
-    <text x="0" y="78" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="54" font-weight="800" fill="#E0E0E0" letter-spacing="-1">kiro-arm64</text>
+  <!-- Left Column: Branding & Information -->
+  <g transform="translate(60, 52)">
+    <!-- Main Title (No top line, no eyebrow pill) -->
+    <text x="0" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="56" font-weight="800" fill="#E0E0E0" letter-spacing="-1">kiro-arm64</text>
 
     <!-- Subtitle -->
-    <text x="0" y="118" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" fill="#9090A0" font-weight="400">AI-powered development environment repackaged for</text>
-    <text x="0" y="146" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" fill="#9090A0" font-weight="400">aarch64 Debian and Ubuntu systems.</text>
+    <text x="0" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#9090A0" font-weight="400">Kiro IDE repackaged for ARM64 Linux.</text>
+    <text x="0" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#9090A0" font-weight="400">aarch64 Debian and Ubuntu build tooling.</text>
 
-    <!-- Specification Pills -->
-    <g transform="translate(0, 182)">
-      <!-- ARM64 Pill with Pumpkin Orange accent -->
-      <rect x="0" y="0" width="120" height="32" rx="16" fill="#FF8C00" fill-opacity="0.15" stroke="#FF8C00" stroke-width="1"/>
-      <text x="14" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#FF8C00">aarch64 Native</text>
+    <!-- Flat Badge / Shield Tags -->
+    <g transform="translate(0, 160)">
+      <!-- Shield 1: arch | arm64 -->
+      <g transform="translate(0, 0)">
+        <path d="M 0,4 A 4,4 0 0,1 4,0 L 50,0 L 50,28 L 0,28 Z" fill="#151520" stroke="#7C4AD6" stroke-width="1"/>
+        <path d="M 50,0 L 106,0 A 4,4 0 0,1 110,4 L 110,24 A 4,4 0 0,1 106,28 L 50,28 Z" fill="#FF8C00"/>
+        <text x="25" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#9090A0" text-anchor="middle">arch</text>
+        <text x="80" y="18" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#0B0B15" text-anchor="middle">arm64</text>
+      </g>
 
-      <!-- Electron Pill -->
-      <rect x="130" y="0" width="140" height="32" rx="16" fill="#7138CC" fill-opacity="0.2" stroke="#7C4AD6" stroke-width="1"/>
-      <text x="144" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#E0E0E0">Electron 39.6.0</text>
+      <!-- Shield 2: electron | 39.6.0 -->
+      <g transform="translate(122, 0)">
+        <path d="M 0,4 A 4,4 0 0,1 4,0 L 68,0 L 68,28 L 0,28 Z" fill="#151520" stroke="#7C4AD6" stroke-width="1"/>
+        <path d="M 68,0 L 134,0 A 4,4 0 0,1 138,4 L 138,24 A 4,4 0 0,1 134,28 L 68,28 Z" fill="#7C4AD6"/>
+        <text x="34" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#9090A0" text-anchor="middle">electron</text>
+        <text x="101" y="18" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#E0E0E0" text-anchor="middle">39.6.0</text>
+      </g>
 
-      <!-- 11 Native Modules Pill -->
-      <rect x="280" y="0" width="156" height="32" rx="16" fill="#151520" stroke="#7C4AD6" stroke-width="1"/>
-      <text x="294" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#E0E0E0">11 Native Addons</text>
+      <!-- Shield 3: modules | 11 native -->
+      <g transform="translate(272, 0)">
+        <path d="M 0,4 A 4,4 0 0,1 4,0 L 72,0 L 72,28 L 0,28 Z" fill="#151520" stroke="#7C4AD6" stroke-width="1"/>
+        <path d="M 72,0 L 146,0 A 4,4 0 0,1 150,4 L 150,24 A 4,4 0 0,1 146,28 L 72,28 Z" fill="#7138CC"/>
+        <text x="36" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#9090A0" text-anchor="middle">modules</text>
+        <text x="111" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#E0E0E0" text-anchor="middle">11 native</text>
+      </g>
     </g>
 
-    <!-- Run / Command Box -->
-    <g transform="translate(0, 234)">
-      <rect width="436" height="46" rx="10" fill="#151520" stroke="#7C4AD6" stroke-width="1" stroke-opacity="0.4"/>
+    <!-- Run Command Box -->
+    <g transform="translate(0, 212)">
+      <rect width="436" height="46" rx="8" fill="#151520" stroke="#7C4AD6" stroke-width="1" stroke-opacity="0.4"/>
       <text x="16" y="29" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#FF8C00" font-weight="700">$</text>
       <text x="32" y="29" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#E0E0E0" font-weight="600">sudo dpkg -i kiro-ide-0.12.224-arm64.deb</text>
     </g>
@@ -66,7 +65,7 @@
     <rect width="580" height="252" rx="12" fill="url(#panel-bg)"/>
     <rect width="580" height="252" rx="12" fill="none" stroke="#7C4AD6" stroke-width="1.5" stroke-opacity="0.5"/>
 
-    <!-- Window Bar -->
+    <!-- Window Titlebar -->
     <path d="M 0,12 A 12,12 0 0,1 12,0 L 568,0 A 12,12 0 0,1 580,12 L 580,36 L 0,36 Z" fill="#0B0B15"/>
     <line x1="0" y1="36" x2="580" y2="36" stroke="#7C4AD6" stroke-width="1" stroke-opacity="0.3"/>
     
