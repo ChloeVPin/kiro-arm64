@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="title desc">
+  <title id="title">kiro-arm64 - Kiro IDE repackaged for ARM64 Linux</title>
+  <desc id="desc">Community repackage of Kiro IDE for aarch64 Debian and Ubuntu systems.</desc>
+  <defs>
+    <linearGradient id="hero-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0B15"/>
+      <stop offset="100%" stop-color="#151520"/>
+    </linearGradient>
+    <linearGradient id="panel-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#151520"/>
+      <stop offset="100%" stop-color="#0B0B15"/>
+    </linearGradient>
+    <linearGradient id="purple-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7138CC" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#7C4AD6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="340" rx="16" fill="url(#hero-bg)"/>
+  <rect width="1200" height="340" rx="16" fill="none" stroke="#7C4AD6" stroke-width="1.5" stroke-opacity="0.3"/>
+
+  <!-- Subtle Brand Accent Bar -->
+  <rect x="0" y="0" width="1200" height="4" fill="#7138CC" rx="2"/>
+
+  <!-- Left Column: Branding & Title -->
+  <g transform="translate(60, 48)">
+    <!-- Eyebrow Category -->
+    <g transform="translate(0, 0)">
+      <rect width="210" height="28" rx="14" fill="#7138CC" fill-opacity="0.2" stroke="#7C4AD6" stroke-width="1"/>
+      <text x="14" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#E0E0E0" letter-spacing="1.2">ARM64 LINUX REPACKAGE</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="78" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="54" font-weight="800" fill="#E0E0E0" letter-spacing="-1">kiro-arm64</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="118" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" fill="#9090A0" font-weight="400">AI-powered development environment repackaged for</text>
+    <text x="0" y="146" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" fill="#9090A0" font-weight="400">aarch64 Debian and Ubuntu systems.</text>
+
+    <!-- Specification Pills -->
+    <g transform="translate(0, 182)">
+      <!-- ARM64 Pill with Pumpkin Orange accent -->
+      <rect x="0" y="0" width="120" height="32" rx="16" fill="#FF8C00" fill-opacity="0.15" stroke="#FF8C00" stroke-width="1"/>
+      <text x="14" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#FF8C00">aarch64 Native</text>
+
+      <!-- Electron Pill -->
+      <rect x="130" y="0" width="140" height="32" rx="16" fill="#7138CC" fill-opacity="0.2" stroke="#7C4AD6" stroke-width="1"/>
+      <text x="144" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#E0E0E0">Electron 39.6.0</text>
+
+      <!-- 11 Native Modules Pill -->
+      <rect x="280" y="0" width="156" height="32" rx="16" fill="#151520" stroke="#7C4AD6" stroke-width="1"/>
+      <text x="294" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#E0E0E0">11 Native Addons</text>
+    </g>
+
+    <!-- Run / Command Box -->
+    <g transform="translate(0, 234)">
+      <rect width="436" height="46" rx="10" fill="#151520" stroke="#7C4AD6" stroke-width="1" stroke-opacity="0.4"/>
+      <text x="16" y="29" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#FF8C00" font-weight="700">$</text>
+      <text x="32" y="29" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#E0E0E0" font-weight="600">sudo dpkg -i kiro-ide-0.12.224-arm64.deb</text>
+    </g>
+  </g>
+
+  <!-- Right Column: Architecture Pipeline Spec Card -->
+  <g transform="translate(560, 44)">
+    <rect width="580" height="252" rx="12" fill="url(#panel-bg)"/>
+    <rect width="580" height="252" rx="12" fill="none" stroke="#7C4AD6" stroke-width="1.5" stroke-opacity="0.5"/>
+
+    <!-- Window Bar -->
+    <path d="M 0,12 A 12,12 0 0,1 12,0 L 568,0 A 12,12 0 0,1 580,12 L 580,36 L 0,36 Z" fill="#0B0B15"/>
+    <line x1="0" y1="36" x2="580" y2="36" stroke="#7C4AD6" stroke-width="1" stroke-opacity="0.3"/>
+    
+    <circle cx="20" cy="18" r="5" fill="#FF8C00"/>
+    <circle cx="36" cy="18" r="5" fill="#7138CC"/>
+    <circle cx="52" cy="18" r="5" fill="#7C4AD6"/>
+    <text x="290" y="23" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#9090A0" text-anchor="middle">kiro arm64 repackage spec</text>
+
+    <!-- Content Rows -->
+    <g transform="translate(24, 56)">
+      <!-- Line 1 -->
+      <g transform="translate(0, 18)">
+        <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#9090A0">App Resources</text>
+        <text x="170" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="600" fill="#E0E0E0">Official x64 .deb extract</text>
+      </g>
+
+      <!-- Line 2 -->
+      <g transform="translate(0, 52)">
+        <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#9090A0">Runtime Shell</text>
+        <text x="170" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="600" fill="#FF8C00">Native Electron arm64</text>
+      </g>
+
+      <!-- Line 3 -->
+      <g transform="translate(0, 86)">
+        <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#9090A0">Native Addons</text>
+        <text x="170" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" font-weight="600" fill="#7138CC">11 Node modules compiled from source</text>
+      </g>
+
+      <!-- Line 4 -->
+      <g transform="translate(0, 120)">
+        <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#9090A0">Package Target</text>
+        <text x="170" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#E0E0E0">Debian / Ubuntu (.deb)</text>
+      </g>
+
+      <!-- Line 5 -->
+      <g transform="translate(0, 154)">
+        <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#9090A0">Code Integrity</text>
+        <text x="170" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#7C4AD6">Unmodified Kiro JS &amp; extension bundles</text>
+      </g>
+    </g>
+  </g>
+</svg>

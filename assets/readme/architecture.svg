@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="200" viewBox="0 0 1200 200" role="img" aria-labelledby="arch-title arch-desc">
+  <title id="arch-title">kiro-arm64 Build Pipeline Architecture</title>
+  <desc id="arch-desc">Four-stage build pipeline: Extract x64 app resources, Pair ARM64 Electron shell, Rebuild native modules, and Assemble deb package.</desc>
+  <defs>
+    <linearGradient id="pipe-bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0B0B15"/>
+      <stop offset="100%" stop-color="#151520"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="200" rx="16" fill="url(#pipe-bg)"/>
+  <rect width="1200" height="200" rx="16" fill="none" stroke="#7C4AD6" stroke-width="1.5" stroke-opacity="0.3"/>
+
+  <!-- Step 1: Extract -->
+  <g transform="translate(30, 32)">
+    <rect width="245" height="136" rx="12" fill="#151520" stroke="#7C4AD6" stroke-width="1.5"/>
+    <rect x="14" y="14" width="30" height="30" rx="6" fill="#7138CC" fill-opacity="0.2" stroke="#7138CC" stroke-width="1"/>
+    <text x="29" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800" fill="#E0E0E0" text-anchor="middle">1</text>
+
+    <text x="54" y="35" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#E0E0E0">EXTRACT x64</text>
+    <text x="14" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#9090A0">Extracts app resources</text>
+    <text x="14" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#9090A0">from official upstream</text>
+    <text x="14" y="112" font-family="ui-monospace, monospace" font-size="12" fill="#7138CC">x64 .deb package</text>
+  </g>
+
+  <!-- Arrow 1 to 2 -->
+  <g transform="translate(285, 86)">
+    <path d="M 0 15 L 18 15 M 13 9 L 19 15 L 13 21" fill="none" stroke="#FF8C00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Step 2: Electron -->
+  <g transform="translate(315, 32)">
+    <rect width="245" height="136" rx="12" fill="#151520" stroke="#FF8C00" stroke-width="1.5"/>
+    <rect x="14" y="14" width="30" height="30" rx="6" fill="#FF8C00" fill-opacity="0.15" stroke="#FF8C00" stroke-width="1"/>
+    <text x="29" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800" fill="#FF8C00" text-anchor="middle">2</text>
+
+    <text x="54" y="35" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#E0E0E0">PAIR ELECTRON</text>
+    <text x="14" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#9090A0">Pairs with matching</text>
+    <text x="14" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#9090A0">native ARM64 Electron</text>
+    <text x="14" y="112" font-family="ui-monospace, monospace" font-size="12" fill="#FF8C00">v39.6.0 runtime</text>
+  </g>
+
+  <!-- Arrow 2 to 3 -->
+  <g transform="translate(570, 86)">
+    <path d="M 0 15 L 18 15 M 13 9 L 19 15 L 13 21" fill="none" stroke="#FF8C00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Step 3: Rebuild -->
+  <g transform="translate(600, 32)">
+    <rect width="265" height="136" rx="12" fill="#151520" stroke="#7C4AD6" stroke-width="1.5"/>
+    <rect x="14" y="14" width="30" height="30" rx="6" fill="#7138CC" fill-opacity="0.2" stroke="#7C4AD6" stroke-width="1"/>
+    <text x="29" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800" fill="#E0E0E0" text-anchor="middle">3</text>
+
+    <text x="54" y="35" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#E0E0E0">REBUILD NATIVE</text>
+    <text x="14" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#9090A0">Recompiles 11 native</text>
+    <text x="14" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#9090A0">Node.js .node modules</text>
+    <text x="14" y="112" font-family="ui-monospace, monospace" font-size="12" fill="#7C4AD6">from source for ARM64</text>
+  </g>
+
+  <!-- Arrow 3 to 4 -->
+  <g transform="translate(875, 86)">
+    <path d="M 0 15 L 18 15 M 13 9 L 19 15 L 13 21" fill="none" stroke="#FF8C00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Step 4: Package -->
+  <g transform="translate(905, 32)">
+    <rect width="265" height="136" rx="12" fill="#151520" stroke="#7138CC" stroke-width="1.5"/>
+    <rect x="14" y="14" width="30" height="30" rx="6" fill="#7138CC" stroke="#7138CC" stroke-width="1"/>
+    <text x="29" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800" fill="#E0E0E0" text-anchor="middle">4</text>
+
+    <text x="54" y="35" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="700" fill="#E0E0E0">ASSEMBLE .DEB</text>
+    <text x="14" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#9090A0">Produces final .deb</text>
+    <text x="14" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#9090A0">package with desktop</text>
+    <text x="14" y="112" font-family="ui-monospace, monospace" font-size="12" fill="#FF8C00">freedesktop integration</text>
+  </g>
+</svg>

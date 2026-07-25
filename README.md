@@ -1,153 +1,177 @@
 <p align="center">
-  <img src="assets/kiro-logo.svg" width="128" height="128" alt="Kiro IDE logo">
-</p>
-
-<h1 align="center">Kiro IDE for ARM64 Linux</h1>
-
-<p align="center">
-  Community repackage of <a href="https://kiro.dev">Kiro IDE</a> for aarch64 Debian/Ubuntu systems.
+  <img src="assets/readme/hero.svg" width="100%" alt="kiro-arm64 - Kiro IDE repackaged for ARM64 Linux" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Kiro-0.12.224-9046FF?style=flat-square" alt="Kiro version">
-  <img src="https://img.shields.io/badge/Electron-39.6.0-47848F?style=flat-square" alt="Electron version">
-  <img src="https://img.shields.io/badge/arch-arm64-blue?style=flat-square" alt="Architecture">
-  <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License">
+  <a href="https://kiro.dev">
+    <img src="https://img.shields.io/badge/Kiro-0.12.224-7138CC?style=flat-square" alt="Kiro version" />
+  </a>
+  <a href="https://electronjs.org">
+    <img src="https://img.shields.io/badge/Electron-39.6.0-7C4AD6?style=flat-square" alt="Electron version" />
+  </a>
+  <img src="https://img.shields.io/badge/arch-arm64-FF8C00?style=flat-square" alt="Architecture" />
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-7138CC?style=flat-square" alt="License" />
+  </a>
 </p>
 
 ---
 
-## What is this?
+## Overview
 
-Kiro IDE is an AI-powered development environment built by Amazon. Official releases target x86-64 Linux only. This project repackages the official release for ARM64 (aarch64) hardware by:
+Kiro IDE is an AI-powered development environment created by Amazon. Official releases target x86-64 Linux systems exclusively.
 
-1. Extracting the architecture-independent app resources from the official x64 `.deb`
-2. Pairing them with a native ARM64 Electron shell (same version Kiro ships)
-3. Recompiling all 11 native Node.js modules from source for ARM64
-4. Producing a standard `.deb` package with desktop integration and the official icon
+This community project provides clean build tooling to repackage official Kiro IDE releases for ARM64 (aarch64) Debian and Ubuntu hardware:
 
-No source code from Kiro is modified. The JavaScript, HTML, and extension bundles are used as-is.
+1. **Extract**: Extracts architecture-independent app resources from the official x64 `.deb` package.
+2. **Pair**: Pairs extracted resources with a native ARM64 Electron shell matching upstream version 39.6.0.
+3. **Rebuild**: Recompiles all 11 native Node.js `.node` modules from source for ARM64.
+4. **Assemble**: Generates a standard `.deb` package complete with desktop integration and application icons.
 
-## Quick install
+> **Source Integrity**: No Kiro source code is altered. JavaScript, HTML, and extension bundles remain byte-identical to upstream releases.
 
-Download the latest `.deb` from [Releases](../../releases), then:
+<br />
+
+<p align="center">
+  <img src="assets/readme/architecture.svg" width="100%" alt="kiro-arm64 four-stage build pipeline architecture" />
+</p>
+
+---
+
+## Quick Installation
+
+Download the latest `.deb` package from Releases, then install via `dpkg`:
 
 ```bash
 sudo dpkg -i kiro-ide-0.12.224-arm64.deb
 ```
 
-Or use the TUI installer:
+Alternatively, run the included interactive TUI installer script:
 
 ```bash
 bash install.sh --local kiro-ide-0.12.224-arm64.deb
 ```
 
-After installation, launch from your application menu or run `kiro` in a terminal.
+Launch `kiro` from your desktop application menu or terminal after installation completes.
 
-## Build from source
+---
 
-Requires: Debian/Ubuntu ARM64, Node.js 20+, build-essential, ~4GB disk space.
+## Build from Source
+
+### System Prerequisites
+- Debian or Ubuntu ARM64 (aarch64) system
+- Node.js 20 or newer
+- Standard build tools (`build-essential`, `make`, `python3`)
+- Approximately 4 GB free disk space
+
+### Full Build Process
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/ChloeVPin/kiro-arm64.git
 cd kiro-arm64
 ```
 
-Place the official Kiro x64 `.deb` in `~/Downloads/` (download from [kiro.dev](https://kiro.dev)), then:
+Download the official Kiro x64 `.deb` from [kiro.dev](https://kiro.dev) into `~/Downloads/`, then run:
 
 ```bash
 make all
 ```
 
-The output `.deb` lands in `build/dist/`. The full build takes about 2 minutes.
+The completed package outputs to `build/dist/`. A full build typically completes within 2 minutes.
 
-### Individual stages
+### Granular Build Stages
 
-Each build step can be run independently:
+Individual pipeline stages can be executed independently:
+
+| Makefile Target | Description |
+|---|---|
+| `make prereqs` | Install system dependencies via apt and Node.js package tools. |
+| `make fetch` | Locate the upstream x64 `.deb` file in your Downloads directory. |
+| `make extract` | Unpack application resources and detect target Electron version. |
+| `make electron` | Download matching native ARM64 Electron runtime shell. |
+| `make natives` | Recompile all 11 native Node.js C++ modules from source for ARM64. |
+| `make assemble` | Combine Electron runtime, application bundle, and compiled modules. |
+| `make icons` | Generate PNG application icon assets from source SVG artwork. |
+| `make deb` | Produce the final Debian `.deb` package file. |
+
+### Utility Targets
 
 ```bash
-make prereqs     # install apt/node dependencies
-make fetch       # locate the upstream x64 .deb
-make extract     # extract app resources, detect Electron version
-make electron    # download arm64 Electron
-make natives     # rebuild native .node modules for arm64
-make assemble    # combine everything into the app tree
-make icons       # generate PNG icons from SVG
-make deb         # package the final .deb
+make verify      # Inspect binary architecture of every compiled .node addon
+make install     # Install the compiled package via sudo dpkg
+make uninstall   # Remove installed kiro-ide package from system
+make clean       # Remove all build outputs and temporary directories
+make clean-soft  # Remove build outputs while retaining cached downloads
 ```
 
-### Other targets
+---
 
-```bash
-make verify      # list architecture of every .node binary
-make install     # install the built .deb (sudo)
-make uninstall   # remove the installed package
-make clean       # wipe all build artifacts
-make clean-soft  # clean but keep cached downloads
-```
+## Rebuilt Native Addons
 
-## Project structure
+The following 11 native Node.js C++ addons are recompiled from source for ARM64 architecture:
 
-```
+| Native Module | Functional Purpose |
+|---|---|
+| `@parcel/watcher` | High-performance filesystem event watching |
+| `native-keymap` | Keyboard layout and keycode detection |
+| `native-watchdog` | Process health and watchdog monitoring |
+| `native-is-elevated` | System privilege and root detection |
+| `node-pty` | Pseudoterminal emulation for integrated terminal |
+| `kerberos` | Enterprise Kerberos authentication protocols |
+| `windows-foreground-love` | Window focus handling (Linux stub) |
+| `@vscode/spdlog` | High-speed structured C++ logging framework |
+| `@vscode/sqlite3` | Local database storage layer |
+| `@vscode/deviceid` | System device identifier generation |
+| `@vscode/policy-watcher` | Enterprise policy configuration monitoring |
+
+`@lancedb/vectordb-linux-arm64-gnu` is pulled directly from its published ARM64 distribution, and `onnxruntime-node` includes upstream ARM64 binaries.
+
+---
+
+## Repository Architecture
+
+```text
 kiro-arm64/
-  assets/              SVG logo (PNGs generated at build time)
-  packaging/
-    debian/            control template, postinst, postrm
-    desktop/           freedesktop .desktop entry
-  scripts/
-    lib/common.sh      shared helpers and logging
-    00-prereqs.sh      install build dependencies
-    10-fetch-source.sh locate upstream .deb
-    20-extract-source  extract and detect versions
-    30-fetch-electron  download arm64 Electron
-    40-rebuild-natives compile native modules
-    50-assemble.sh     combine shell + app + modules
-    60-generate-icons  SVG to PNG rasterization
-    70-build-deb.sh    produce the .deb
-    build-all.sh       orchestrator (supports --from/--to)
-    clean.sh           cleanup (supports --soft/--dist)
+  assets/              Source SVG logo and generated artwork
+  packaging/           Debian control files and freedesktop entry
+  scripts/             Modular build automation pipeline scripts
+    00-prereqs.sh      Install build dependencies
+    10-fetch-source.sh Locate upstream .deb archive
+    20-extract-source  Extract app bundle and detect versions
+    30-fetch-electron  Download ARM64 Electron runtime
+    40-rebuild-natives Recompile C++ Node.js addons for ARM64
+    50-assemble.sh     Assemble Electron runtime and app bundle
+    60-generate-icons  Rasterize SVG logo into PNG desktop icons
+    70-build-deb.sh    Package final .deb installer
+    build-all.sh       Full build pipeline orchestrator
+    clean.sh           Build cleanup utility script
   src/
-    native-rebuild/    pinned native module versions
-  config.sh            tunable build variables
-  install.sh           TUI installer script
-  Makefile             convenience targets
-  VERSION              target Kiro version
+    native-rebuild/    Pinned native module package definitions
+  config.sh            Tunable build parameters and environment options
+  install.sh           Interactive TUI installer
+  Makefile             Convenience targets and build orchestration
+  VERSION              Target Kiro release version string
 ```
 
-## Native modules rebuilt
+---
 
-These 11 native Node.js addons are compiled from source for ARM64:
+## Tested Hardware Compatibility
 
-| Module | Purpose |
-|--------|---------|
-| `@parcel/watcher` | Filesystem watching |
-| `native-keymap` | Keyboard layout detection |
-| `native-watchdog` | Process watchdog |
-| `native-is-elevated` | Privilege detection |
-| `node-pty` | Terminal emulation |
-| `kerberos` | Kerberos authentication |
-| `windows-foreground-love` | Window focus (Linux stub) |
-| `@vscode/spdlog` | Structured logging |
-| `@vscode/sqlite3` | Local database |
-| `@vscode/deviceid` | Device identification |
-| `@vscode/policy-watcher` | Policy file monitoring |
+- Snapdragon X Elite (Dell XPS 13 9345) running Ubuntu 26.04 ARM64
 
-Additionally, `@lancedb/vectordb-linux-arm64-gnu` is installed from its published ARM64 package, and `onnxruntime-node` already ships ARM64 binaries upstream.
+Compatible with general ARM64 Debian and Ubuntu distributions.
 
-## Tested on
+---
 
-- Ubuntu 26.04 on Snapdragon X Elite (Dell XPS 13 9345)
+## Disclaimers & License
 
-Other ARM64 Debian/Ubuntu systems should work. If you test on additional hardware, open an issue or PR to update this list.
+### Disclaimers
+This is an **unofficial** community project. Kiro IDE is a proprietary product developed by Amazon. This repository provides build automation tooling and packaging scripts only. Kiro IDE software is not bundled and must be obtained directly from [kiro.dev](https://kiro.dev).
 
-## Disclaimer
+The Kiro trademark and logo belong to Amazon and are used strictly for application icon generation. No affiliation or endorsement by Amazon is implied.
 
-This is an **unofficial** community project. Kiro IDE is a proprietary product of Amazon. This repository contains only build tooling and packaging scripts. The Kiro IDE software itself is not included and must be downloaded separately from [kiro.dev](https://kiro.dev).
-
-The Kiro logo is a trademark of Amazon, included solely for reproducing the official application icon. No endorsement by Amazon is implied.
-
-## License
-
-Build scripts and tooling: [MIT](LICENSE)
-
-Kiro IDE: governed by its own [terms of service](https://kiro.dev)
+### License
+- Build Tooling &amp; Scripts: [MIT License](LICENSE)
+- Kiro IDE Application: Governed by Amazon [Terms of Service](https://kiro.dev)
