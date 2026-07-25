@@ -4,14 +4,14 @@
 
 <p align="center">
   <a href="https://kiro.dev">
-    <img src="https://img.shields.io/badge/Kiro-0.12.224-7138CC?style=flat-square" alt="Kiro version" />
+    <img src="https://img.shields.io/badge/Kiro-0.12.224-7138CC" alt="Kiro version" />
   </a>
   <a href="https://electronjs.org">
-    <img src="https://img.shields.io/badge/Electron-39.6.0-7C4AD6?style=flat-square" alt="Electron version" />
+    <img src="https://img.shields.io/badge/Electron-39.6.0-7C4AD6" alt="Electron version" />
   </a>
-  <img src="https://img.shields.io/badge/arch-arm64-FF8C00?style=flat-square" alt="Architecture" />
+  <img src="https://img.shields.io/badge/arch-arm64-FF8C00" alt="Architecture" />
   <a href="LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-7138CC?style=flat-square" alt="License" />
+    <img src="https://img.shields.io/badge/license-MIT-7138CC" alt="License" />
   </a>
 </p>
 

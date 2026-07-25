@@ -17,46 +17,19 @@
   <rect width="1200" height="340" rx="16" fill="none" stroke="#7C4AD6" stroke-width="1.5" stroke-opacity="0.3"/>
 
   <!-- Left Column: Branding & Information -->
-  <g transform="translate(60, 52)">
-    <!-- Main Title (No top line, no eyebrow pill) -->
+  <g transform="translate(60, 56)">
+    <!-- Main Title -->
     <text x="0" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="56" font-weight="800" fill="#E0E0E0" letter-spacing="-1">kiro-arm64</text>
 
     <!-- Subtitle -->
-    <text x="0" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#9090A0" font-weight="400">Kiro IDE repackaged for ARM64 Linux.</text>
-    <text x="0" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#9090A0" font-weight="400">aarch64 Debian and Ubuntu build tooling.</text>
-
-    <!-- Flat Badge / Shield Tags -->
-    <g transform="translate(0, 160)">
-      <!-- Shield 1: arch | arm64 -->
-      <g transform="translate(0, 0)">
-        <path d="M 0,4 A 4,4 0 0,1 4,0 L 50,0 L 50,28 L 0,28 Z" fill="#151520" stroke="#7C4AD6" stroke-width="1"/>
-        <path d="M 50,0 L 106,0 A 4,4 0 0,1 110,4 L 110,24 A 4,4 0 0,1 106,28 L 50,28 Z" fill="#FF8C00"/>
-        <text x="25" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#9090A0" text-anchor="middle">arch</text>
-        <text x="80" y="18" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#0B0B15" text-anchor="middle">arm64</text>
-      </g>
-
-      <!-- Shield 2: electron | 39.6.0 -->
-      <g transform="translate(122, 0)">
-        <path d="M 0,4 A 4,4 0 0,1 4,0 L 68,0 L 68,28 L 0,28 Z" fill="#151520" stroke="#7C4AD6" stroke-width="1"/>
-        <path d="M 68,0 L 134,0 A 4,4 0 0,1 138,4 L 138,24 A 4,4 0 0,1 134,28 L 68,28 Z" fill="#7C4AD6"/>
-        <text x="34" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#9090A0" text-anchor="middle">electron</text>
-        <text x="101" y="18" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#E0E0E0" text-anchor="middle">39.6.0</text>
-      </g>
-
-      <!-- Shield 3: modules | 11 native -->
-      <g transform="translate(272, 0)">
-        <path d="M 0,4 A 4,4 0 0,1 4,0 L 72,0 L 72,28 L 0,28 Z" fill="#151520" stroke="#7C4AD6" stroke-width="1"/>
-        <path d="M 72,0 L 146,0 A 4,4 0 0,1 150,4 L 150,24 A 4,4 0 0,1 146,28 L 72,28 Z" fill="#7138CC"/>
-        <text x="36" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#9090A0" text-anchor="middle">modules</text>
-        <text x="111" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#E0E0E0" text-anchor="middle">11 native</text>
-      </g>
-    </g>
+    <text x="0" y="102" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#9090A0" font-weight="400">Kiro IDE repackaged for ARM64 Linux.</text>
+    <text x="0" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="#9090A0" font-weight="400">aarch64 Debian and Ubuntu build tooling.</text>
 
     <!-- Run Command Box -->
-    <g transform="translate(0, 212)">
-      <rect width="436" height="46" rx="8" fill="#151520" stroke="#7C4AD6" stroke-width="1" stroke-opacity="0.4"/>
-      <text x="16" y="29" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#FF8C00" font-weight="700">$</text>
-      <text x="32" y="29" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#E0E0E0" font-weight="600">sudo dpkg -i kiro-ide-0.12.224-arm64.deb</text>
+    <g transform="translate(0, 172)">
+      <rect width="436" height="48" rx="8" fill="#151520" stroke="#7C4AD6" stroke-width="1" stroke-opacity="0.4"/>
+      <text x="16" y="30" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#FF8C00" font-weight="700">$</text>
+      <text x="32" y="30" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#E0E0E0" font-weight="600">sudo dpkg -i kiro-ide-0.12.224-arm64.deb</text>
     </g>
   </g>
 
